@@ -3956,7 +3956,6 @@ export default function Index() {
                                 className="inline-block relative warm-glow-text animate-warm-glow-pulse animate-wavy-text"
                                 style={{
                                   animationDelay: `${i * 0.06}s`,
-                                  animationDuration: "2s",
                                 }}
                               >
                                 {ch === " " ? "\u00A0" : ch}
