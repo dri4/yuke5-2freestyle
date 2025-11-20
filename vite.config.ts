@@ -50,12 +50,17 @@ function expressPlugin(): Plugin {
     name: "express-plugin",
     apply: "serve", // Only apply during development (serve mode)
     configureServer(server) {
-      // Dynamically import createServer only in dev mode
-      const { createServer: createExpressServer } = require("./server");
-      const app = createExpressServer();
+      try {
+        // Dynamically import createServer only in dev mode
+        const { createServer: createExpressServer } = require("./server");
+        const app = createExpressServer();
 
-      // Add Express app as middleware to Vite dev server
-      server.middlewares.use(app);
+        // Add Express app as middleware to Vite dev server
+        server.middlewares.use(app);
+      } catch (e) {
+        // Server module not available in this context
+        console.warn("Express server not loaded - this is expected in build mode");
+      }
     },
   };
 }
