@@ -1765,7 +1765,7 @@ export default function Index() {
                     className={cn("w-6 h-6 mx-auto mb-2", contact.color)}
                   />
                   <div className="text-sm font-medium">{contact.label}</div>
-                  <div className="text-xs text-muted-foreground">
+                  <div className="text-xs text-muted-foreground break-words max-w-[120px]">
                     {contact.detail}
                   </div>
                 </motion.a>

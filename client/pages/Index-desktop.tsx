@@ -12060,7 +12060,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
           const serverMessage = await res.text();
           const message = res.status === 403
             ? (serverMessage || "You may not send messages at this time.")
-            : "Submission failed. Please try again or contact us on Instagram/Discord if the issue persists.";
+            : "Submission failed. Please try again or contact us on any of the mentioned platforms shown if the issue persists.";
           setSubmitMessage(message);
           setShowResultModal({ open: true, success: false, message });
           // start cooldown to avoid spam even on errors
