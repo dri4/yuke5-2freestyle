@@ -1,0 +1,259 @@
+:root {
+  /* Mobile-optimized KOR Digital Theme */
+  --background: oklch(0.0500 0 0);
+  --foreground: oklch(0.9800 0 0);
+  --card: oklch(0.0700 0.0200 240);
+  --card-foreground: oklch(0.9600 0 0);
+  --popover: oklch(0.0600 0.0150 240);
+  --popover-foreground: oklch(0.9700 0 0);
+  --primary: oklch(0.6500 0.1800 240);
+  --primary-foreground: oklch(0.9900 0 0);
+  --secondary: oklch(0.1200 0.0300 240);
+  --secondary-foreground: oklch(0.9400 0 0);
+  --muted: oklch(0.1000 0.0200 240);
+  --muted-foreground: oklch(0.7000 0 0);
+  --accent: oklch(0.7000 0.2200 200);
+  --accent-foreground: oklch(0.0500 0 0);
+  --destructive: oklch(0.5800 0.2400 28);
+  --destructive-foreground: oklch(0.9800 0 0);
+  --border: oklch(0.2000 0.0400 240);
+  --input: oklch(0.1500 0.0300 240);
+  --ring: oklch(0.6500 0.1800 240);
+  --chart-1: oklch(0.6500 0.1800 240);
+  --chart-2: oklch(0.7000 0.2200 200);
+  --chart-3: oklch(0.5500 0.2000 280);
+  --chart-4: oklch(0.6000 0.1600 320);
+  --chart-5: oklch(0.6800 0.1900 160);
+  --sidebar: oklch(0.0600 0.0150 240);
+  --sidebar-foreground: oklch(0.9600 0 0);
+  --sidebar-primary: oklch(0.6500 0.1800 240);
+  --sidebar-primary-foreground: oklch(0.9900 0 0);
+  --sidebar-accent: oklch(0.1200 0.0300 240);
+  --sidebar-accent-foreground: oklch(0.9400 0 0);
+  --sidebar-border: oklch(0.2000 0.0400 240);
+  --sidebar-ring: oklch(0.6500 0.1800 240);
+  
+  /* Mobile-optimized typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+  
+  /* Mobile-friendly border radius */
+  --radius: 0.75rem;
+  
+  /* Optimized shadows for mobile performance */
+  --shadow-2xs: 0 1px 2px 0px hsl(240 100% 50% / 0.15);
+  --shadow-xs: 0 1px 3px 0px hsl(240 100% 50% / 0.20);
+  --shadow-sm: 0 2px 4px 0px hsl(240 100% 50% / 0.25), 0 1px 2px -1px hsl(240 100% 50% / 0.25);
+  --shadow: 0 4px 6px 0px hsl(240 100% 50% / 0.30), 0 2px 4px -1px hsl(240 100% 50% / 0.30);
+  --shadow-md: 0 6px 8px 0px hsl(240 100% 50% / 0.35), 0 4px 6px -1px hsl(240 100% 50% / 0.35);
+  --shadow-lg: 0 8px 12px 0px hsl(240 100% 50% / 0.40), 0 6px 8px -1px hsl(240 100% 50% / 0.40);
+  --shadow-xl: 0 12px 16px 0px hsl(240 100% 50% / 0.45), 0 8px 12px -1px hsl(240 100% 50% / 0.45);
+  --shadow-2xl: 0 16px 24px 0px hsl(240 100% 50% / 0.50);
+  
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+  
+  /* Mobile-optimized glow effects */
+  --glow-primary: 0 0 20px hsl(240 100% 65% / 0.4);
+  --glow-secondary: 0 0 15px hsl(200 100% 70% / 0.3);
+  --glow-accent: 0 0 25px hsl(280 100% 60% / 0.35);
+  
+  /* Glass morphism variables */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-backdrop: blur(10px);
+  
+  /* Particle colors for mobile */
+  --particle-blue: rgba(59, 130, 246, 0.6);
+  --particle-cyan: rgba(34, 211, 238, 0.5);
+  --particle-purple: rgba(147, 51, 234, 0.4);
+  --particle-pink: rgba(236, 72, 153, 0.4);
+  --particle-green: rgba(34, 197, 94, 0.5);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  :root {
+    /* Reduced animation duration for better mobile performance */
+    --duration-fast: 0.15s;
+    --duration-normal: 0.25s;
+    --duration-slow: 0.4s;
+    
+    /* Smaller font sizes for mobile */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    
+    /* Touch-friendly spacing */
+    --touch-target: 44px;
+    --spacing-touch: 1rem;
+    --spacing-section: 2rem;
+  }
+}
+
+/* Base mobile styles */
+html, body {
+  font-family: var(--font-sans) !important;
+  background: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+  overflow-x: hidden !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Mobile-optimized glass morphism */
+.glass-card {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  backdrop-filter: var(--glass-backdrop) !important;
+  -webkit-backdrop-filter: var(--glass-backdrop) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+/* Mobile button styles */
+.mobile-button {
+  min-height: var(--touch-target) !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: var(--radius) !important;
+  font-weight: 600 !important;
+  transition: all var(--duration-fast) ease !important;
+  background: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  box-shadow: var(--glow-primary) !important;
+}
+
+.mobile-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-lg), var(--glow-primary) !important;
+}
+
+/* Mobile card styles */
+.mobile-card {
+  background: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: var(--spacing-touch) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all var(--duration-normal) ease !important;
+}
+
+.mobile-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-md) !important;
+  border-color: hsl(var(--primary)) !important;
+}
+
+/* Mobile navigation styles */
+.mobile-nav {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-backdrop) !important;
+  -webkit-backdrop-filter: var(--glass-backdrop) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* Mobile-optimized particle effects */
+@media (max-width: 768px) {
+  .particle-effect {
+    animation-duration: 6s !important;
+    opacity: 0.3 !important;
+    filter: blur(2px) !important;
+  }
+  
+  /* Disable heavy animations on mobile */
+  .heavy-animation {
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  /* Reduce particle count */
+  .particle-layer:nth-child(n+6) {
+    display: none !important;
+  }
+}
+
+/* Mobile typography */
+.mobile-heading-1 {
+  font-size: var(--text-3xl) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  color: hsl(var(--foreground)) !important;
+  text-shadow: var(--glow-primary) !important;
+}
+
+.mobile-heading-2 {
+  font-size: var(--text-2xl) !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.mobile-heading-3 {
+  font-size: var(--text-xl) !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.mobile-body {
+  font-size: var(--text-base) !important;
+  line-height: 1.6 !important;
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+/* Mobile-optimized animations */
+@keyframes mobile-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mobile-glow-pulse {
+  0%, 100% {
+    box-shadow: var(--glow-primary);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), var(--glow-primary);
+  }
+}
+
+/* Performance optimizations */
+@media (max-width: 768px) {
+  * {
+    will-change: auto !important;
+  }
+  
+  .mobile-optimized {
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    perspective: 1000px !important;
+  }
+}

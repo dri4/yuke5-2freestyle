@@ -1,0 +1,420 @@
+/* ================================================ */
+/* CINEMATIC SECTION TRANSITION ANIMATIONS */
+/* ================================================ */
+
+@keyframes cinematic-reveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0) scale3d(0.95, 0.95, 1) translateZ(0);
+    filter: blur(10px);
+    will-change: transform, opacity, filter;
+  }
+
+  8.33% {
+    opacity: 0.08;
+    transform: translate3d(0, 25px, 0) scale3d(0.96, 0.96, 1) translateZ(0);
+    filter: blur(8.5px);
+  }
+
+  16.67% {
+    opacity: 0.17;
+    transform: translate3d(0, 20px, 0) scale3d(0.97, 0.97, 1) translateZ(0);
+    filter: blur(7px);
+  }
+
+  25% {
+    opacity: 0.25;
+    transform: translate3d(0, 15px, 0) scale3d(0.98, 0.98, 1) translateZ(0);
+    filter: blur(5.5px);
+  }
+
+  33.33% {
+    opacity: 0.4;
+    transform: translate3d(0, 12px, 0) scale3d(0.985, 0.985, 1) translateZ(0);
+    filter: blur(4px);
+  }
+
+  41.67% {
+    opacity: 0.55;
+    transform: translate3d(0, 9px, 0) scale3d(0.99, 0.99, 1) translateZ(0);
+    filter: blur(3px);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: translate3d(0, 6px, 0) scale3d(0.995, 0.995, 1) translateZ(0);
+    filter: blur(2px);
+  }
+
+  58.33% {
+    opacity: 0.8;
+    transform: translate3d(0, 4px, 0) scale3d(0.997, 0.997, 1) translateZ(0);
+    filter: blur(1.5px);
+  }
+
+  66.67% {
+    opacity: 0.88;
+    transform: translate3d(0, 3px, 0) scale3d(0.998, 0.998, 1) translateZ(0);
+    filter: blur(1px);
+  }
+
+  75% {
+    opacity: 0.93;
+    transform: translate3d(0, 2px, 0) scale3d(0.999, 0.999, 1) translateZ(0);
+    filter: blur(0.5px);
+  }
+
+  83.33% {
+    opacity: 0.96;
+    transform: translate3d(0, 1px, 0) scale3d(0.9995, 0.9995, 1) translateZ(0);
+    filter: blur(0.3px);
+  }
+
+  91.67% {
+    opacity: 0.98;
+    transform: translate3d(0, 0.5px, 0) scale3d(0.9998, 0.9998, 1) translateZ(0);
+    filter: blur(0.1px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) translateZ(0);
+    filter: blur(0px);
+    will-change: auto;
+  }
+}
+
+@keyframes cinematic-wipe-in {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes cinematic-fade-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0) translateZ(0);
+    will-change: transform, opacity;
+  }
+
+  10% {
+    opacity: 0.1;
+    transform: translate3d(0, 36px, 0) translateZ(0);
+  }
+
+  20% {
+    opacity: 0.25;
+    transform: translate3d(0, 32px, 0) translateZ(0);
+  }
+
+  30% {
+    opacity: 0.4;
+    transform: translate3d(0, 24px, 0) translateZ(0);
+  }
+
+  40% {
+    opacity: 0.55;
+    transform: translate3d(0, 18px, 0) translateZ(0);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: translate3d(0, 12px, 0) translateZ(0);
+  }
+
+  60% {
+    opacity: 0.8;
+    transform: translate3d(0, 8px, 0) translateZ(0);
+  }
+
+  70% {
+    opacity: 0.88;
+    transform: translate3d(0, 5px, 0) translateZ(0);
+  }
+
+  80% {
+    opacity: 0.93;
+    transform: translate3d(0, 3px, 0) translateZ(0);
+  }
+
+  90% {
+    opacity: 0.97;
+    transform: translate3d(0, 1px, 0) translateZ(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) translateZ(0);
+    will-change: auto;
+  }
+}
+
+@keyframes black-wipe {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  51% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes section-content-reveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0) scale3d(0.96, 0.96, 1) translateZ(0);
+    filter: blur(8px);
+    will-change: transform, opacity, filter;
+  }
+
+  12.5% {
+    opacity: 0.125;
+    transform: translate3d(0, 21px, 0) scale3d(0.965, 0.965, 1) translateZ(0);
+    filter: blur(7px);
+  }
+
+  25% {
+    opacity: 0.3;
+    transform: translate3d(0, 18px, 0) scale3d(0.97, 0.97, 1) translateZ(0);
+    filter: blur(6px);
+  }
+
+  37.5% {
+    opacity: 0.5;
+    transform: translate3d(0, 14px, 0) scale3d(0.975, 0.975, 1) translateZ(0);
+    filter: blur(4.5px);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: translate3d(0, 10px, 0) scale3d(0.98, 0.98, 1) translateZ(0);
+    filter: blur(3px);
+  }
+
+  62.5% {
+    opacity: 0.82;
+    transform: translate3d(0, 7px, 0) scale3d(0.985, 0.985, 1) translateZ(0);
+    filter: blur(2px);
+  }
+
+  75% {
+    opacity: 0.9;
+    transform: translate3d(0, 4px, 0) scale3d(0.99, 0.99, 1) translateZ(0);
+    filter: blur(1px);
+  }
+
+  87.5% {
+    opacity: 0.95;
+    transform: translate3d(0, 2px, 0) scale3d(0.995, 0.995, 1) translateZ(0);
+    filter: blur(0.5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) translateZ(0);
+    filter: blur(0px);
+    will-change: auto;
+  }
+}
+
+/* Content reveal stagger effect */
+.cinematic-reveal {
+  animation: cinematic-reveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: transform, opacity, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.cinematic-reveal-delayed {
+  animation: cinematic-reveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.15s;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.cinematic-wipe {
+  animation: cinematic-wipe-in 0.6s ease-out forwards;
+}
+
+.cinematic-fade-up {
+  animation: cinematic-fade-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    forwards;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Black transition overlay enhancements */
+.black-transition {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgb(0, 0, 0) 100%
+  );
+}
+
+.black-transition-wipe {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(0, 0, 0) 50%,
+    rgb(0, 0, 0) 100%
+  );
+  animation: black-wipe 1s ease-in-out;
+}
+
+/* Section content visibility states */
+.section-hidden {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0) scale3d(0.98, 0.98, 1);
+  filter: blur(5px);
+  transition: all 0.8s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  filter: blur(0px);
+  transition: all 0.8s ease-out;
+  transition-delay: 0.3s;
+}
+
+/* Performance optimizations for transitions */
+.transition-optimized {
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth reveal animation for section content */
+.content-reveal {
+  animation: section-content-reveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    forwards;
+  will-change: transform, opacity, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.content-reveal-stagger {
+  animation: section-content-reveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    forwards;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.content-reveal-stagger:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.content-reveal-stagger:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.content-reveal-stagger:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.content-reveal-stagger:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.content-reveal-stagger:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Enhanced black transition with subtle effects */
+.black-overlay-enhanced {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(10, 10, 10, 1) 25%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(10, 10, 10, 1) 75%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+}
+
+/* Cinematic reveal for different content types */
+.hero-reveal {
+  animation: cinematic-reveal 1s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.text-reveal {
+  animation: cinematic-fade-up 0.7s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.card-reveal {
+  animation: cinematic-reveal 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.card-reveal:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.card-reveal:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.card-reveal:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.card-reveal:nth-child(4) {
+  animation-delay: 0.5s;
+}
+.card-reveal:nth-child(5) {
+  animation-delay: 0.6s;
+}
+.card-reveal:nth-child(6) {
+  animation-delay: 0.7s;
+}
+
+/* Mobile optimizations for cinematic transitions */
+@media (max-width: 768px) {
+  .cinematic-reveal,
+  .cinematic-fade-up,
+  .content-reveal,
+  .hero-reveal,
+  .text-reveal,
+  .card-reveal {
+    animation-duration: 0.5s !important;
+  }
+
+  .content-reveal-stagger:nth-child(n) {
+    animation-delay: 0.05s !important;
+  }
+
+  .card-reveal:nth-child(n) {
+    animation-delay: 0.1s !important;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-reveal,
+  .cinematic-fade-up,
+  .content-reveal,
+  .hero-reveal,
+  .text-reveal,
+  .card-reveal,
+  .black-transition-wipe {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

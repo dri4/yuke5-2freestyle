@@ -1,0 +1,163 @@
+/* Mobile Text Performance Optimizations */
+/* Disable heavy text animations on mobile and tablet devices for better performance */
+
+@media (max-width: 991px) {
+  /* Disable heavy text shadow animations on mobile/tablet */
+  .warm-glow-text,
+  .animate-warm-glow-pulse,
+  .animate-text-glow,
+  .animate-textGlow {
+    text-shadow: none !important;
+    animation: none !important;
+    background: unset !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+  }
+
+  /* Disable letter-by-letter animations that cause stuttering */
+  .animate-letter-float {
+    animation: none !important;
+  }
+
+  /* Disable dev services text animation */
+  .animate-dev-services-text {
+    animation: none !important;
+    filter: none !important;
+  }
+
+  /* Simplify glow animations */
+  .animate-pulse-glow {
+    animation: none !important;
+    opacity: 0.8 !important;
+  }
+
+  /* Override complex keyframe animations */
+  @keyframes simple-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Disable webkit text clipping on mobile */
+  .warm-glow-text {
+    background: unset !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: white !important;
+    color: white !important;
+  }
+
+  /* Reduce transform complexity */
+  .inline-block {
+    transform: none !important;
+  }
+
+  /* Disable complex text filters */
+  h1,
+  h2,
+  h3 {
+    filter: none !important;
+    text-shadow: none !important;
+  }
+}
+
+/* Mobile only (640px and below) - even more aggressive optimizations */
+@media (max-width: 640px) {
+  /* Remove text animations but preserve background/decorative animations */
+  .animate-letter-float,
+  .animate-dev-services-text,
+  .animate-pulse-glow,
+  .animate-textGlow,
+  .animate-text-glow,
+  .warm-glow-text,
+  .animate-warm-glow-pulse {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+
+  /* Keep short transitions for interactive elements */
+  button, .interactive {
+    transition-duration: 0.2s !important;
+  }
+
+  /* Disable all text shadow effects */
+  .warm-glow-text,
+  .animate-warm-glow-pulse,
+  .animate-text-glow,
+  .animate-textGlow,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-shadow: none !important;
+    filter: none !important;
+    animation: none !important;
+    backdrop-filter: none !important;
+    background: unset !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: white !important;
+    color: white !important;
+  }
+
+  /* Override text glow effects only */
+  .animate-pulse-glow {
+    animation: none !important;
+  }
+}
+
+/* Tablet only (641px to 991px) - moderate optimizations */
+@media (min-width: 641px) and (max-width: 991px) {
+  /* Allow simple text shadow but disable complex animations */
+  .warm-glow-text {
+    text-shadow: 0 0 5px rgba(73, 146, 255, 0.3) !important;
+    animation: none !important;
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  /* Disable letter-by-letter but allow simple glow */
+  .animate-letter-float {
+    animation: none !important;
+  }
+
+  .animate-warm-glow-pulse {
+    animation: simple-glow-tablet 3s ease-in-out infinite !important;
+  }
+
+  @keyframes simple-glow-tablet {
+    0%,
+    100% {
+      text-shadow: 0 0 5px rgba(73, 146, 255, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 8px rgba(73, 146, 255, 0.5);
+    }
+  }
+}
+
+/* Performance boost utilities */
+.text-performance-optimized {
+  will-change: auto !important;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Apply optimizations to common text elements */
+@media (max-width: 991px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-poppins,
+  .font-inter {
+    will-change: auto !important;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}

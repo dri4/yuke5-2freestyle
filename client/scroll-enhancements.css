@@ -1,0 +1,139 @@
+/* Enhanced Scroll Behavior */
+
+/* Smooth scrolling for all scroll containers */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure all sections allow proper overflow behavior */
+.section-container {
+  position: relative;
+  /* Allow content to overflow naturally */
+  overflow: visible !important;
+  /* Ensure minimum height but allow content to extend */
+  min-height: 100vh;
+}
+
+/* Optimize scrolling performance */
+.scroll-optimized {
+  /* Enable hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  /* Enable smooth touch scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+
+  /* Improve scroll performance */
+  overscroll-behavior: contain;
+
+  /* Ensure content doesn't interfere with scroll */
+  overflow-anchor: none;
+}
+
+/* Ensure sections stack properly */
+[data-section] {
+  position: relative;
+  width: 100%;
+  /* Allow sections to have natural height */
+  min-height: 100vh;
+  /* Remove any conflicting overflow settings */
+  overflow: visible;
+}
+
+/* Performance optimizations for mobile scrolling */
+@media (max-width: 768px) {
+  .scroll-optimized {
+    /* Reduce scroll jank on mobile */
+    will-change: scroll-position;
+  }
+
+  /* Ensure touch targets are appropriate */
+  button,
+  [role="button"],
+  input,
+  textarea {
+    touch-action: manipulation;
+  }
+
+  /* Optimize sections for mobile */
+  [data-section] {
+    /* Ensure sections work well on mobile */
+    min-height: 100svh; /* Use small viewport height when available */
+  }
+}
+
+/* Prevent scroll anchoring issues */
+* {
+  overflow-anchor: none;
+}
+
+/* Ensure fixed elements work with scroll */
+.fixed {
+  /* Prevent fixed elements from creating scroll issues */
+  contain: layout style paint;
+}
+
+/* Smooth transitions for programmatic scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .smooth-scroll {
+    scroll-behavior: auto;
+  }
+}
+
+/* Optimize scroll indicators */
+.scroll-indicator {
+  /* Ensure scroll indicators don't interfere with scrolling */
+  pointer-events: none;
+}
+
+.scroll-indicator * {
+  pointer-events: auto;
+}
+
+/* Ensure back to top button works well */
+.back-to-top {
+  /* Position properly relative to scroll container */
+  position: fixed;
+  z-index: 50;
+}
+
+/* Handle content that might overflow on different devices */
+@supports (height: 100dvh) {
+  [data-section] {
+    min-height: 100dvh; /* Use dynamic viewport height when available */
+  }
+}
+
+/* Ensure proper spacing between sections */
+[data-section]:not(:last-child) {
+  /* Add small gap between sections if needed */
+  margin-bottom: 0;
+}
+
+/* Handle sections with complex content */
+[data-section="services"] {
+  /* Services section may have overflow content */
+  overflow: visible;
+}
+
+[data-section="portfolio"] {
+  /* Portfolio section may have gallery overflow */
+  overflow: visible;
+}
+
+[data-section="contact"] {
+  /* Contact section may have form overflow */
+  overflow: visible;
+}

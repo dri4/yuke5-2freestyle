@@ -1,0 +1,20 @@
+/* Simple view responsive styles */
+@media (max-width: 768px) {
+  .simple-view {
+    padding: 0 1rem;
+  }
+  
+  .simple-view-section {
+    padding: 1.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .simple-view {
+    padding: 0 0.5rem;
+  }
+  
+  .simple-view-section {
+    padding: 1rem 0;
+  }
+}

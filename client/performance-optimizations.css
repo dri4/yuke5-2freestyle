@@ -1,0 +1,172 @@
+/* Performance-optimized animations with reduced motion support */
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Keep essential UI transitions but make them instant */
+  .essential-transition {
+    transition-duration: 0.1s !important;
+  }
+
+  /* Disable decorative animations */
+  .animate-float,
+  .animate-pulse,
+  .animate-spin,
+  .animate-bounce,
+  .animate-wiggle,
+  .animate-gentle-float,
+  .animate-button-float {
+    animation: none !important;
+  }
+
+  /* Remove background effects that can trigger motion sensitivity */
+  .aurora-container,
+  .floating-particles,
+  .animated-gradient {
+    display: none !important;
+  }
+}
+
+/* Battery optimization for low-power devices */
+@media (prefers-reduced-motion: reduce), (update: slow) {
+  /* Disable GPU-intensive effects */
+  .gpu-accelerated {
+    transform: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Simplify gradients to solid colors */
+  .complex-gradient {
+    background: var(--background) !important;
+  }
+
+  /* Remove shadows and glows */
+  .glow-effect,
+  .text-glow,
+  .box-glow {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+  }
+}
+
+/* High contrast mode optimizations */
+@media (prefers-contrast: high) {
+  .subtle-effect {
+    opacity: 1 !important;
+    filter: contrast(1.5) !important;
+  }
+
+  /* Ensure text is always readable */
+  .text-overlay {
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: white !important;
+  }
+}
+
+/* Performance optimizations for low-end devices */
+@media (max-width: 768px) {
+  /* Reduce the number of animated elements on mobile */
+  .particle-system .particle:nth-child(n+6) {
+    display: none;
+  }
+
+  /* Simplify complex animations */
+  .complex-animation {
+    animation-timing-function: ease !important;
+    animation-duration: 1s !important;
+  }
+
+  /* Use transform3d for hardware acceleration on mobile */
+  .mobile-optimized {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+}
+
+/* Connection-aware optimizations */
+@supports (content-visibility: auto) {
+  /* Use content-visibility for better rendering performance */
+  .section-content {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+}
+
+/* Memory optimization classes */
+.memory-efficient {
+  contain: layout style paint;
+  will-change: auto;
+}
+
+.gpu-layer {
+  transform: translateZ(0);
+  isolation: isolate;
+  will-change: transform, opacity;
+}
+
+/* Optimize animations for 60fps */
+.smooth-60fps {
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Critical resource loading optimizations */
+.loading-skeleton {
+  animation: skeleton-loading 1.5s ease-in-out infinite alternate;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Intersection Observer optimizations */
+.lazy-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Container query optimizations (when supported) */
+@container (max-width: 400px) {
+  .responsive-content {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Print optimizations */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-friendly {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+}

@@ -1,0 +1,144 @@
+/* ================================================ */
+/* ADDITIONAL 60FPS PERFORMANCE OPTIMIZATIONS */
+/* ================================================ */
+
+/* Enable containment for better performance */
+.section-container {
+  contain: layout style paint;
+}
+
+/* Optimize scroll performance */
+.scroll-optimized {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  contain: strict;
+}
+
+/* Force hardware acceleration on all animated elements */
+.gpu-layer {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize complex transforms */
+.animate-optimized {
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  will-change: transform, opacity;
+}
+
+/* Reduce complexity during scroll */
+.scroll-simplified * {
+  animation-play-state: paused !important;
+  transition: none !important;
+}
+
+/* Allow background animations to continue during scroll transitions */
+.scroll-simplified [data-section]:not([data-section="home"]) .gpu-accelerated {
+  animation: none !important;
+}
+
+/* Memory optimization for large lists */
+.virtualized {
+  contain: strict;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* Optimize blur effects */
+.optimized-blur {
+  filter: blur(2px);
+  will-change: filter;
+}
+
+@media (max-width: 768px) {
+  .optimized-blur {
+    filter: none;
+  }
+}
+
+/* Force layer creation for smooth animations */
+.force-layer {
+  transform: translateZ(0);
+  isolation: isolate;
+}
+
+/* Optimize composite layers */
+.composite-layer {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* High-DPI optimizations */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .high-dpi-optimize {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduce motion for accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .gpu-accelerated {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .touch-optimize {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .touch-optimize input,
+  .touch-optimize textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+/* Battery saving optimizations */
+@media (prefers-reduced-motion: reduce), (update: slow) {
+  .battery-save {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* CPU optimization for low-end devices */
+.cpu-optimize {
+  image-rendering: auto;
+  shape-rendering: auto;
+  text-rendering: optimizeSpeed;
+}
+
+/* Memory efficient animations */
+.memory-efficient {
+  animation-fill-mode: none;
+  animation-delay: 0s;
+  transform-origin: center center;
+}
+
+/* Optimize paint performance */
+.paint-optimize {
+  contain: paint layout;
+  will-change: transform;
+}

@@ -1,0 +1,59 @@
+/* Static CSS replacements for animations that caused Framer Motion errors */
+
+/* Static text glow effect to replace animated textShadow */
+.warm-glow-text {
+  text-shadow:
+    0 0 30px rgba(59, 130, 246, 0.6),
+    0 0 60px rgba(73, 146, 255, 0.3);
+  filter: brightness(1.1) saturate(1.05);
+}
+
+/* Enhanced glow on hover */
+.warm-glow-text:hover {
+  text-shadow:
+    0 0 40px rgba(59, 130, 246, 0.8),
+    0 0 80px rgba(73, 146, 255, 0.5);
+  filter: brightness(1.2) saturate(1.1);
+  transition:
+    text-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* Ensure text remains readable */
+.warm-glow-text {
+  color: rgb(255, 255, 255);
+  font-weight: inherit;
+}
+
+/* Website card glow animation using CSS instead of Framer Motion boxShadow array */
+.website-card-glow {
+  animation: website-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes website-glow {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
+  }
+}
+
+/* CSS blur animations to replace problematic Framer Motion filter animations */
+.filter-blur-in {
+  animation: blur-in 1.2s ease-out forwards;
+}
+
+.filter-blur-out {
+  filter: blur(10px);
+}
+
+@keyframes blur-in {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}

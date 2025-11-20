@@ -1,0 +1,170 @@
+/* ================================================ */
+/* STICKY NAVIGATION FIXES */
+/* ================================================ */
+
+/* Ensure navigation elements always stay in view */
+.sticky-nav-element {
+  position: fixed !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Force navigation dots to move with scroll */
+div[class*="fixed left-"][class*="top-1/2"] {
+  position: absolute !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  transform: translateY(-50%) translateZ(0) !important;
+}
+
+/* Force back up button to move with scroll */
+button[class*="fixed"][class*="left-"][class*="bottom-"] {
+  position: absolute !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+/* Force help button to move with scroll */
+div[class*="fixed right-"][class*="bottom-"] {
+  position: absolute !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure fixed elements are not affected by any overflow hidden */
+.sticky-override {
+  position: fixed !important;
+  z-index: 99999 !important;
+}
+
+/* Navigation dot container positioning */
+.nav-dots-container {
+  position: fixed !important;
+  left: 1.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+@media (min-width: 640px) {
+  .nav-dots-container {
+    left: 2rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-dots-container {
+    left: 2.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-dots-container {
+    left: 3rem !important;
+  }
+}
+
+/* Back up button positioning */
+.back-up-button {
+  position: fixed !important;
+  left: 1.5rem !important;
+  bottom: 1.5rem !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+@media (min-width: 640px) {
+  .back-up-button {
+    left: 2rem !important;
+    bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .back-up-button {
+    left: 2.5rem !important;
+    bottom: 2.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .back-up-button {
+    left: 3rem !important;
+    bottom: 3rem !important;
+  }
+}
+
+/* Help button positioning */
+.help-button {
+  position: fixed !important;
+  right: 1.5rem !important;
+  bottom: 1.5rem !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+@media (min-width: 640px) {
+  .help-button {
+    right: 2rem !important;
+    bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .help-button {
+    right: 2.5rem !important;
+    bottom: 2.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .help-button {
+    right: 3rem !important;
+    bottom: 3rem !important;
+  }
+}
+
+/* Mobile Safari adjustments */
+@supports (-webkit-touch-callout: none) {
+  .back-up-button {
+    bottom: 5rem !important;
+  }
+
+  .help-button {
+    bottom: 7.5rem !important;
+  }
+}
+
+/* CRITICAL: Force back up button to always be visible - override Framer Motion */
+button[class*="group absolute z-[99999]"] {
+  position: absolute !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+/* Specific override for motion.button with back up styling */
+*[style*="position: absolute"][class*="group"][class*="left-"][class*="bottom-"] {
+  position: absolute !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+/* Force all navigation elements to be visible */
+div[class*="hidden md:flex fixed left-"][class*="top-1/2"] {
+  position: absolute !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}

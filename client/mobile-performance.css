@@ -1,0 +1,30 @@
+/* Mobile Performance Optimizations - Removed to enable full experience on all devices */
+@media (max-width: 768px) {
+  /* Enable hardware acceleration for smooth performance */
+  .gpu-accelerated,
+  .animate-gentleFloat,
+  .animate-breath,
+  .animate-float,
+  .animate-button-float,
+  .performance-optimized,
+  .mobile-optimized * {
+    will-change: transform !important;
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+  }
+
+  /* Optimize scroll performance */
+  .scroll-optimized {
+    -webkit-overflow-scrolling: touch !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* Hardware acceleration for all devices */
+.performance-optimized {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

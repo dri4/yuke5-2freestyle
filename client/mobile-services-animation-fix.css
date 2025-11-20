@@ -1,0 +1,101 @@
+/* Mobile Services Animation Performance Optimizations */
+
+/* Force GPU acceleration and prevent layout thrashing for service cards */
+#services .mobile-premium-card {
+  contain: layout style paint;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+/* Optimize accordion content for smooth height animations */
+#services .mobile-premium-card [class*="motion-div"] {
+  contain: layout;
+  will-change: height, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Reduce repaints during animations */
+#services .mobile-premium-card .absolute {
+  contain: strict;
+  transform: translateZ(0);
+}
+
+/* Prevent CSS transitions from conflicting with Framer Motion */
+#services .mobile-motion-override.mobile-premium-card {
+  transition: none !important;
+  will-change: auto !important;
+}
+
+#services .mobile-motion-override.mobile-premium-card:hover {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Optimize text rendering during animations */
+#services .mobile-premium-card p,
+#services .mobile-premium-card h3 {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve chevron rotation smoothness */
+#services .mobile-premium-card svg {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Prevent overflow issues during height animations */
+#services {
+  contain: layout;
+  overflow: hidden;
+}
+
+/* Smooth scroll behavior for service section */
+#services .space-y-4 {
+  contain: layout;
+}
+
+/* Optimize button interactions */
+#services .mobile-premium-card button {
+  contain: layout style;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Reduce paint complexity during animations */
+#services .mobile-premium-card .bg-gradient-to-br {
+  contain: strict;
+  transform: translateZ(0);
+  will-change: auto;
+}
+
+/* Improve mobile touch responsiveness */
+@media (max-width: 768px) {
+  #services .mobile-premium-card {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Reduce motion complexity on lower-end devices */
+  @media (prefers-reduced-motion: reduce) {
+    #services * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Optimize for different screen densities */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  #services .mobile-premium-card {
+    transform: translateZ(0) scale(1);
+  }
+}

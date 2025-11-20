@@ -1,0 +1,99 @@
+/* Service Card Animation Performance Fixes */
+
+/* Force GPU acceleration for services section */
+#services {
+  contain: layout;
+  will-change: auto;
+}
+
+/* Optimize service cards for smooth animations */
+#services .mobile-premium-card {
+  contain: layout style;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* Remove conflicting CSS transitions */
+  transition: none !important;
+}
+
+/* Optimize expandable content */
+#services .mobile-premium-card [style*="overflow"] {
+  contain: layout;
+  will-change: height, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Disable all CSS animations that conflict with Framer Motion */
+#services .mobile-motion-override {
+  animation: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}
+
+#services .mobile-motion-override:hover,
+#services .mobile-motion-override:active {
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Optimize text rendering during animations */
+#services .mobile-premium-card p {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  contain: layout style;
+}
+
+/* Prevent repaints on gradient backgrounds */
+#services .mobile-premium-card .absolute {
+  contain: strict;
+  will-change: auto;
+}
+
+/* Smooth button interactions */
+#services .mobile-premium-card button {
+  contain: layout;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Optimize chevron rotation */
+#services .mobile-premium-card svg {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce complexity on mobile */
+  #services .mobile-premium-card {
+    transform: translateZ(0);
+  }
+  
+  /* Improve touch responsiveness */
+  #services .mobile-premium-card button {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Optimize for lower-end devices */
+  @media (max-width: 480px) {
+    #services .mobile-premium-card .absolute {
+      display: none; /* Remove gradients on very small screens for performance */
+    }
+  }
+}
+
+/* Disable problematic animations on reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #services * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

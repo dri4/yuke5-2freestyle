@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /$
+Allow: /about$
+Allow: /services$
+Allow: /portfolio$
+Allow: /contact$
+
+# Protect source files and sensitive directories
+Disallow: /api/
+Disallow: /.env
+Disallow: /.git
+Disallow: /node_modules/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.map$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+Disallow: /*.jsx$
+Disallow: /assets/
+Disallow: /dist/
+
+Sitemap: https://yourdomain.com/sitemap.xml

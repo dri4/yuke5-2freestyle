@@ -1,0 +1,178 @@
+/* Disable ONLY content loading animations for mobile and tablet */
+/* ALL background animations are preserved (aurora, particles, corners, waves, etc.) */
+
+/* Mobile breakpoint: 640px and smaller */
+@media (max-width: 640px) {
+  /* Target only Framer Motion components that control content entrance */
+  /* This specifically targets the motion.div components that wrap content blocks */
+
+  /* Override Framer Motion initial states that hide content */
+  [data-section="about"] > * > [style*="opacity: 0"],
+  [data-section="about"] > * > [style*="translateY"],
+  [data-section="services"] > * > [style*="opacity: 0"],
+  [data-section="services"] > * > [style*="translateY"],
+  [data-section="portfolio"] > * > [style*="opacity: 0"],
+  [data-section="portfolio"] > * > [style*="translateY"],
+  [data-section="contact"] > * > [style*="opacity: 0"],
+  [data-section="contact"] > * > [style*="translateY"] {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  /* Force content cards and text to be immediately visible */
+  [data-section="about"] .content-wrapper,
+  [data-section="about"] .section-content,
+  [data-section="about"] .card-grid,
+  [data-section="about"] .text-content,
+  [data-section="services"] .content-wrapper,
+  [data-section="services"] .section-content,
+  [data-section="services"] .card-grid,
+  [data-section="services"] .text-content,
+  [data-section="portfolio"] .content-wrapper,
+  [data-section="portfolio"] .section-content,
+  [data-section="portfolio"] .card-grid,
+  [data-section="portfolio"] .text-content,
+  [data-section="contact"] .content-wrapper,
+  [data-section="contact"] .section-content,
+  [data-section="contact"] .card-grid,
+  [data-section="contact"] .text-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  /* Disable card and button loading animations specifically */
+  [data-section="about"] div[class*="card"],
+  [data-section="about"] button,
+  [data-section="about"] [role="button"],
+  [data-section="services"] div[class*="card"],
+  [data-section="services"] button,
+  [data-section="services"] [role="button"],
+  [data-section="portfolio"] div[class*="card"],
+  [data-section="portfolio"] button,
+  [data-section="portfolio"] [role="button"],
+  [data-section="contact"] div[class*="card"],
+  [data-section="contact"] button,
+  [data-section="contact"] [role="button"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    animation: none !important;
+    transition:
+      background-color 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease !important;
+  }
+
+  /* Force all motion containers in non-home sections to show content immediately */
+  [data-section="about"] [style*="opacity: 0"],
+  [data-section="services"] [style*="opacity: 0"],
+  [data-section="portfolio"] [style*="opacity: 0"],
+  [data-section="contact"] [style*="opacity: 0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Target deeply nested motion components */
+  [data-section="about"] * [style*="opacity: 0"],
+  [data-section="services"] * [style*="opacity: 0"],
+  [data-section="portfolio"] * [style*="opacity: 0"],
+  [data-section="contact"] * [style*="opacity: 0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Tablet breakpoint: 641px to 991px */
+@media (min-width: 641px) and (max-width: 991px) {
+  /* Target only Framer Motion components that control content entrance */
+  /* This specifically targets the motion.div components that wrap content blocks */
+
+  /* Override Framer Motion initial states that hide content */
+  [data-section="about"] > * > [style*="opacity: 0"],
+  [data-section="about"] > * > [style*="translateY"],
+  [data-section="services"] > * > [style*="opacity: 0"],
+  [data-section="services"] > * > [style*="translateY"],
+  [data-section="portfolio"] > * > [style*="opacity: 0"],
+  [data-section="portfolio"] > * > [style*="translateY"],
+  [data-section="contact"] > * > [style*="opacity: 0"],
+  [data-section="contact"] > * > [style*="translateY"] {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  /* Force content cards and text to be immediately visible */
+  [data-section="about"] .content-wrapper,
+  [data-section="about"] .section-content,
+  [data-section="about"] .card-grid,
+  [data-section="about"] .text-content,
+  [data-section="services"] .content-wrapper,
+  [data-section="services"] .section-content,
+  [data-section="services"] .card-grid,
+  [data-section="services"] .text-content,
+  [data-section="portfolio"] .content-wrapper,
+  [data-section="portfolio"] .section-content,
+  [data-section="portfolio"] .card-grid,
+  [data-section="portfolio"] .text-content,
+  [data-section="contact"] .content-wrapper,
+  [data-section="contact"] .section-content,
+  [data-section="contact"] .card-grid,
+  [data-section="contact"] .text-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  /* Disable card and button loading animations specifically */
+  [data-section="about"] div[class*="card"],
+  [data-section="about"] button,
+  [data-section="about"] [role="button"],
+  [data-section="services"] div[class*="card"],
+  [data-section="services"] button,
+  [data-section="services"] [role="button"],
+  [data-section="portfolio"] div[class*="card"],
+  [data-section="portfolio"] button,
+  [data-section="portfolio"] [role="button"],
+  [data-section="contact"] div[class*="card"],
+  [data-section="contact"] button,
+  [data-section="contact"] [role="button"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    animation: none !important;
+    transition:
+      background-color 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease !important;
+  }
+
+  /* Force all motion containers in non-home sections to show content immediately */
+  [data-section="about"] [style*="opacity: 0"],
+  [data-section="services"] [style*="opacity: 0"],
+  [data-section="portfolio"] [style*="opacity: 0"],
+  [data-section="contact"] [style*="opacity: 0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Target deeply nested motion components */
+  [data-section="about"] * [style*="opacity: 0"],
+  [data-section="services"] * [style*="opacity: 0"],
+  [data-section="portfolio"] * [style*="opacity: 0"],
+  [data-section="contact"] * [style*="opacity: 0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/*
+EXPLICITLY PRESERVED BACKGROUND ANIMATIONS:
+- aurora-wave-subtle-1, aurora-wave-subtle-2, aurora-wave-subtle-3
+- desktop-float-1, desktop-float-2, desktop-float-3, desktop-float-4
+- mobile-float-1, mobile-float-2, mobile-float-3
+- desktop-pulse-corner, mobile-pulse-corner
+- desktop-wave-1, desktop-wave-2, desktop-wave-3, desktop-wave-4
+- mobile-wave-1, mobile-wave-2, mobile-wave-3
+- All aurora curtains, floating particles, corner pulses, and wave patterns
+- All button hover effects and card styling
+*/

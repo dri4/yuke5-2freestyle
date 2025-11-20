@@ -1,0 +1,635 @@
+/* Mobile Lively Animations - Enhanced Experience */
+/* This file enhances mobile animations to make the site feel more alive */
+
+/* Re-enable key animations on mobile with optimizations */
+@media (max-width: 768px) {
+  /* Mobile-optimized floating particles with more life */
+  .mobile-floating-particles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .mobile-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.6) 0%,
+      transparent 70%
+    );
+    animation: mobile-lively-particle 8s ease-in-out infinite;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Reduce particle animation when stats are animating */
+  .stats-animating .mobile-particle {
+    animation-duration: 15s;
+    opacity: 0.3;
+  }
+
+  /* Staggered particle animations for more liveliness */
+  .mobile-particle:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .mobile-particle:nth-child(2) {
+    animation-delay: -2s;
+  }
+  .mobile-particle:nth-child(3) {
+    animation-delay: -4s;
+  }
+  .mobile-particle:nth-child(4) {
+    animation-delay: -6s;
+  }
+  .mobile-particle:nth-child(5) {
+    animation-delay: -8s;
+  }
+  .mobile-particle:nth-child(6) {
+    animation-delay: -10s;
+  }
+
+  /* Breathing background orbs with enhanced liveliness */
+  .mobile-breathing-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(30px);
+    animation: mobile-orb-breath 8s ease-in-out infinite;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+
+  /* Card animations that respond to touch/hover */
+  .mobile-premium-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  .mobile-premium-card:hover,
+  .mobile-premium-card:active {
+    transform: translateY(-4px) scale(1.02) translateZ(0);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Override CSS animations for motion elements to prevent conflicts */
+  .mobile-motion-override.mobile-premium-card {
+    transition: none !important;
+    will-change: auto !important;
+    transform: none !important;
+  }
+
+  .mobile-motion-override.mobile-premium-card:hover,
+  .mobile-motion-override.mobile-premium-card:active {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Override all CSS animations for Framer Motion elements */
+  .mobile-motion-override {
+    transition: none !important;
+    animation: none !important;
+    will-change: auto !important;
+  }
+
+  .mobile-motion-override:hover,
+  .mobile-motion-override:active {
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Tilt effect for cards */
+  .mobile-tilt-card {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-tilt-card:hover {
+    transform: perspective(1000px) rotateX(3deg) rotateY(5deg) translateZ(20px);
+  }
+
+  /* Disable tilt for motion elements */
+  .mobile-motion-override.mobile-tilt-card {
+    transform-style: auto !important;
+    transition: none !important;
+  }
+
+  .mobile-motion-override.mobile-tilt-card:hover {
+    transform: none !important;
+  }
+
+  /* Disable ALL animations and transforms for Framer Motion elements */
+  .mobile-motion-override {
+    transform: none !important;
+    transform-style: auto !important;
+    perspective: none !important;
+    backface-visibility: visible !important;
+  }
+
+  .mobile-motion-override * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    transform-style: auto !important;
+    perspective: none !important;
+    backface-visibility: visible !important;
+    will-change: auto !important;
+  }
+
+  .mobile-motion-override *:hover,
+  .mobile-motion-override *:active,
+  .mobile-motion-override *:focus {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+
+  /* Enhanced text effects with subtle glow */
+  .mobile-premium-text {
+    background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #3b82f6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    animation: mobile-text-glow 3s ease-in-out infinite;
+  }
+
+  /* Stat counter animations */
+  .mobile-stat-counter {
+    color: #60a5fa;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    animation: mobile-counter-pulse 3s ease-in-out infinite;
+  }
+
+  /* Disable counter animation when stats are animating for performance */
+  .stats-animating .mobile-stat-counter {
+    animation: none;
+  }
+
+  /* Disable pulse borders during stats animation for performance */
+  .stats-animating .animate-pulse {
+    animation: none;
+  }
+
+  /* Enhanced menu button with breathing effect */
+  .mobile-menu-enhanced {
+    animation: mobile-menu-breath 3s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Floating action buttons */
+  .mobile-fab {
+    animation: mobile-fab-float 4s ease-in-out infinite;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  }
+
+  /* Enhanced background waves */
+  .mobile-wave-bg {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(59, 130, 246, 0.05),
+      transparent
+    );
+    animation: mobile-wave-flow 15s linear infinite;
+  }
+
+  /* Pulse rings around interactive elements */
+  .mobile-pulse-ring {
+    position: absolute;
+    inset: -10px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: inherit;
+    animation: mobile-pulse-ring 2s ease-out infinite;
+  }
+
+  /* Enhanced section transitions */
+  .mobile-section-enhanced {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(59, 130, 246, 0.02) 50%,
+      transparent 100%
+    );
+    animation: mobile-section-glow 8s ease-in-out infinite;
+  }
+
+  /* Ambient glow effects */
+  .mobile-ambient-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(59, 130, 246, 0.1) 0%,
+      transparent 60%
+    );
+    animation: mobile-ambient-pulse 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Interactive button enhancements */
+  .mobile-button-enhanced {
+    position: relative;
+    overflow: hidden;
+    animation: mobile-button-breathe 4s ease-in-out infinite;
+  }
+
+  /* Enhanced form inputs */
+  .mobile-input-enhanced {
+    transition: all 0.3s ease;
+    animation: mobile-input-ready 2s ease-in-out infinite;
+  }
+
+  .mobile-input-enhanced:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Sparkle effects for highlights */
+  .mobile-sparkle {
+    position: relative;
+  }
+
+  .mobile-sparkle::after {
+    content: "✨";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-sparkle:hover::after {
+    transform: translateY(-2px);
+  }
+
+  /* Enhanced grid layouts with staggered animations */
+  .mobile-grid-enhanced > * {
+    animation: mobile-grid-item-in 0.6s ease-out forwards;
+  }
+
+  .mobile-grid-enhanced > *:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .mobile-grid-enhanced > *:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .mobile-grid-enhanced > *:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .mobile-grid-enhanced > *:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .mobile-grid-enhanced > *:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  .mobile-grid-enhanced > *:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+}
+
+/* Enhanced Animation Keyframes */
+@keyframes mobile-lively-particle {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1) translateZ(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-15px, -30px) scale(1.1) translateZ(0);
+    opacity: 0.7;
+  }
+}
+
+@keyframes mobile-orb-breath {
+  0%,
+  100% {
+    transform: scale(1) translateZ(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.2) translateZ(0);
+    opacity: 0.5;
+  }
+}
+
+/* Reduce orb animation when stats are animating */
+.stats-animating .mobile-breathing-orb {
+  animation-duration: 12s;
+  opacity: 0.1;
+}
+
+@keyframes mobile-text-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    filter: brightness(1);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes mobile-counter-pulse {
+  0%,
+  100% {
+    transform: scale(1) translateZ(0);
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    transform: scale(1.02) translateZ(0);
+    text-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
+  }
+}
+
+@keyframes mobile-menu-breath {
+  0%,
+  100% {
+    transform: scale(1) translateZ(0);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    transform: scale(1.05) translateZ(0);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+  }
+}
+
+@keyframes mobile-fab-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+@keyframes mobile-wave-flow {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(50%) rotate(360deg);
+  }
+}
+
+@keyframes mobile-pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes mobile-section-glow {
+  0%,
+  100% {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(59, 130, 246, 0.02) 50%,
+      transparent 100%
+    );
+  }
+  50% {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(59, 130, 246, 0.05) 50%,
+      transparent 100%
+    );
+  }
+}
+
+@keyframes mobile-ambient-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes mobile-button-breathe {
+  0%,
+  100% {
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes mobile-input-ready {
+  0%,
+  100% {
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes mobile-grid-item-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Enhanced micro-interactions for mobile */
+@media (max-width: 768px) {
+  /* Touch feedback */
+  .mobile-touch-feedback:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+
+  /* Loading states */
+  .mobile-loading-shimmer {
+    background: rgba(59, 130, 246, 0.1);
+  }
+
+  /* Progress indicators */
+  .mobile-progress-glow {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    animation: mobile-progress-pulse 1s ease-in-out infinite;
+  }
+
+  /* Enhanced navigation indicators */
+  .mobile-nav-indicator {
+    position: relative;
+  }
+
+  .mobile-nav-indicator::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .mobile-nav-indicator.active::after {
+    width: 100%;
+  }
+
+  /* Enhanced scroll indicators */
+  .mobile-scroll-hint {
+    animation: mobile-scroll-bounce 2s ease-in-out infinite;
+  }
+
+  /* Status indicators with glow */
+  .mobile-status-online {
+    background: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    animation: mobile-status-pulse 2s ease-in-out infinite;
+  }
+
+  /* Enhanced typography animations */
+  .mobile-text-highlight {
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(59, 130, 246, 0.2) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: mobile-text-sweep 3s ease-in-out infinite;
+  }
+}
+
+/* Additional keyframes for micro-interactions */
+@keyframes mobile-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes mobile-progress-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes mobile-scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes mobile-status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes mobile-text-sweep {
+  0%,
+  100% {
+    background-position: -200% 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+}
+
+/* High-performance mobile optimizations */
+@media (max-width: 768px) {
+  .mobile-optimized-animations * {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Reduce animations for low-power mode */
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-particle,
+    .mobile-breathing-orb,
+    .mobile-text-glow {
+      animation: none !important;
+    }
+  }
+
+  /* Enhanced animations for high refresh rate displays */
+  @media (min-resolution: 120dpi) {
+    .mobile-particle {
+      animation-duration: 8s;
+    }
+
+    .mobile-counter-pulse {
+      animation-duration: 1.5s;
+    }
+  }
+}
+
+/* Accessibility enhancements */
+@media (max-width: 768px) and (prefers-contrast: high) {
+  .mobile-premium-text {
+    -webkit-text-fill-color: currentColor;
+    background: none;
+  }
+
+  .mobile-stat-counter {
+    text-shadow: none;
+  }
+}
+
+/* Dark mode optimizations */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+  .mobile-particle {
+    background: radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.6) 0%,
+      transparent 70%
+    );
+  }
+
+  .mobile-premium-card {
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+}

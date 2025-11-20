@@ -1,0 +1,32 @@
+/* Simple view desktop styles */
+.simple-view {
+  /* Base styles */
+  --primary-color: theme('colors.blue.600');
+  --secondary-color: theme('colors.gray.200');
+  
+  /* Typography */
+  font-size: 16px;
+  line-height: 1.5;
+  
+  /* Layout */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Content sections */
+.simple-view-section {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+/* Responsive breakpoints */
+@media (min-width: 768px) {
+  .simple-view {
+    padding: 0 2rem;
+  }
+  
+  .simple-view-section {
+    padding: 3rem 0;
+  }
+}

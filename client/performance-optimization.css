@@ -1,0 +1,241 @@
+/* ========================================
+   PERFORMANCE OPTIMIZATION STYLES
+   Responsive styles for low-end devices
+   ======================================== */
+
+/* Reduced motion for devices that prefer it or low-end devices but preserve aurora */
+.reduce-motion *:not([class*="aurora"]):not([style*="aurora"]),
+.reduce-motion *:not([class*="aurora"]):not([style*="aurora"])::before,
+.reduce-motion *:not([class*="aurora"]):not([style*="aurora"])::after {
+  animation-duration: 0.3s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.2s !important;
+  transition-delay: 0s !important;
+}
+
+/* Low-end device optimizations */
+.low-end-mode {
+  --blur-intensity: 2px;
+  --shadow-intensity: 0.3;
+  --glow-intensity: 0.5;
+  --animation-speed: 0.5;
+}
+
+/* Force GPU acceleration for better performance on supported elements */
+.low-end-mode .gpu-accelerated,
+.performance-optimized {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduce backdrop blur intensity */
+.reduced-effects .backdrop-blur-xs {
+  backdrop-filter: blur(1px) !important;
+}
+
+.reduced-effects .backdrop-blur-sm {
+  backdrop-filter: blur(2px) !important;
+}
+
+.reduced-effects .backdrop-blur-lg {
+  backdrop-filter: blur(4px) !important;
+}
+
+.reduced-effects .backdrop-blur-xl {
+  backdrop-filter: blur(6px) !important;
+}
+
+.reduced-effects .backdrop-blur-2xl {
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Reduce shadow complexity */
+.reduced-effects [class*="shadow-glow"],
+.reduced-effects [class*="glow-"] {
+  box-shadow: 0 0 10px rgba(73, 146, 255, 0.3) !important;
+}
+
+.reduced-effects [class*="shadow-xl"] {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.reduced-effects [class*="shadow-2xl"] {
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Simplify animations but preserve aurora effects */
+.reduced-effects [class*="animate-"]:not([style*="aurora"]):not([class*="aurora"]) {
+  animation-iteration-count: 1 !important;
+  animation-duration: 0.5s !important;
+}
+
+/* Hide complex particle systems and effects on low-end devices but preserve aurora */
+.low-end-mode .complex-animation:not([class*="aurora"]):not([style*="aurora"]),
+.low-end-mode .particle-system,
+.low-end-mode .matrix-background,
+.low-end-mode .floating-orbs {
+  display: none !important;
+}
+
+/* Simplify gradients */
+.low-end-mode [class*="bg-gradient-"] {
+  background: var(--primary) !important;
+}
+
+/* Reduce filter effects but preserve aurora blur */
+.low-end-mode [style*="filter: blur"]:not([class*="aurora"]):not([style*="aurora"]) {
+  filter: blur(2px) !important;
+}
+
+/* Optimize transforms for better performance */
+.hover-120hz {
+  transition: transform 0.1s ease-out;
+}
+
+.float-120hz {
+  animation-timing-function: ease-in-out;
+}
+
+.glow-120hz {
+  transition: text-shadow 0.2s ease-out;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  .low-end-mode [class*="animate-"] {
+    animation-duration: 0.3s !important;
+    animation-iteration-count: 1 !important;
+  }
+  
+  .low-end-mode .backdrop-blur-lg {
+    backdrop-filter: blur(2px) !important;
+  }
+  
+  .low-end-mode [class*="shadow-"] {
+    box-shadow: none !important;
+  }
+}
+
+/* Text rendering optimizations */
+.low-end-mode {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Disable expensive text effects on low-end devices */
+.low-end-mode .text-glow,
+.low-end-mode [class*="animate-text"],
+.low-end-mode [class*="text-shadow"] {
+  text-shadow: none !important;
+  animation: none !important;
+}
+
+/* Reduce opacity animations complexity */
+.low-end-mode [class*="opacity-"] {
+  transition: opacity 0.2s ease !important;
+}
+
+/* Optimize position and transform animations */
+.low-end-mode [class*="translate"],
+.low-end-mode [class*="rotate"],
+.low-end-mode [class*="scale"] {
+  transition: transform 0.2s ease !important;
+}
+
+/* Performance hint classes */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.will-change-auto {
+  will-change: auto;
+}
+
+/* Chromebook-specific optimizations */
+@media (max-width: 1366px) and (max-height: 768px) {
+  .chromebook-optimized {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+  
+  .chromebook-optimized .backdrop-blur-lg {
+    backdrop-filter: blur(3px) !important;
+  }
+  
+  .chromebook-optimized [class*="shadow-"] {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+/* Battery saving mode (when battery is low) */
+.battery-saving {
+  animation-play-state: paused !important;
+}
+
+.battery-saving [class*="animate-"] {
+  animation-play-state: paused !important;
+}
+
+.battery-saving .gpu-accelerated {
+  will-change: auto !important;
+}
+
+/* Prefer reduced motion media query */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .parallax-container {
+    transform: none !important;
+  }
+}
+
+/* Aurora effects preservation - ensure they always look good */
+[class*="aurora-curtain"],
+[class*="aurora-base"],
+[style*="aurora"] {
+  /* Preserve aurora animations even in reduced mode */
+  animation-iteration-count: infinite !important;
+  animation-duration: inherit !important;
+  filter: inherit !important;
+  opacity: inherit !important;
+}
+
+/* High contrast mode optimizations */
+@media (prefers-contrast: high) {
+  .low-end-mode [class*="opacity-"] {
+    opacity: 1 !important;
+  }
+
+  .low-end-mode [class*="bg-gradient-"] {
+    background: var(--foreground) !important;
+  }
+}
+
+/* Print optimizations */
+@media print {
+  .low-end-mode,
+  .reduced-effects,
+  .battery-saving {
+    * {
+      animation: none !important;
+      transition: none !important;
+      background: white !important;
+      color: black !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+  }
+}

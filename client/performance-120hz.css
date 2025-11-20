@@ -1,0 +1,270 @@
+/* ================================================ */
+/* 120HZ PERFORMANCE OPTIMIZATIONS */
+/* ================================================ */
+
+/* Global performance optimizations for 120hz displays */
+:root {
+  /* 120hz friendly timing functions */
+  --ease-120hz: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-smooth: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Optimized durations for 120fps */
+  --duration-ultra-fast: 0.08s;
+  --duration-fast: 0.15s;
+  --duration-medium: 0.3s;
+  --duration-slow: 0.6s;
+
+  /* Performance flags */
+  --gpu-acceleration: translateZ(0);
+  --hardware-layer: transform translateZ(0);
+}
+
+/* High performance base class */
+.performance-optimized {
+  will-change: transform, opacity, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
+  isolation: isolate;
+}
+
+/* Enhanced transform performance */
+.smooth-transform {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimized opacity transitions */
+.smooth-opacity {
+  will-change: opacity;
+  transition: opacity var(--duration-fast) var(--ease-120hz);
+}
+
+/* 120hz optimized hover effects */
+.hover-120hz {
+  transition:
+    transform var(--duration-fast) var(--ease-120hz),
+    filter var(--duration-fast) var(--ease-120hz),
+    opacity var(--duration-fast) var(--ease-120hz);
+  will-change: transform, filter, opacity;
+  transform: translateZ(0);
+}
+
+.hover-120hz:hover {
+  transform: translateY(-1px) scale(1.02) translateZ(0);
+  filter: brightness(1.1) saturate(1.1);
+}
+
+/* Ultra-smooth text animations */
+.text-smooth {
+  will-change: transform, filter;
+  transform: translateZ(0);
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced sparkle performance */
+.sparkle-120hz {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  animation-timing-function: var(--ease-120hz);
+  animation-fill-mode: forwards;
+  contain: layout style paint;
+}
+
+/* High-performance floating animations */
+.float-120hz {
+  will-change: transform;
+  transform: translateZ(0);
+  animation-timing-function: var(--ease-smooth);
+  contain: layout style paint;
+}
+
+/* Optimized glow effects */
+.glow-120hz {
+  will-change: filter, text-shadow;
+  transform: translateZ(0);
+  filter: brightness(1);
+  transition: filter var(--duration-medium) var(--ease-120hz);
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 768px) {
+  .performance-optimized {
+    /* Reduce will-change on mobile for battery life */
+    will-change: transform;
+  }
+
+  .hover-120hz {
+    /* Simplified mobile interactions */
+    transition: transform var(--duration-medium) var(--ease-120hz);
+  }
+
+  /* Disable complex effects on low-power devices */
+  @media (prefers-reduced-motion: reduce) {
+    .sparkle-120hz,
+    .float-120hz,
+    .glow-120hz {
+      animation: none !important;
+      transition: none !important;
+      will-change: auto !important;
+    }
+  }
+}
+
+/* High refresh rate display optimizations */
+@media (min-resolution: 120dpi) and (min-refresh-rate: 120hz) {
+  /* Ultra-smooth animations for 120hz+ displays */
+  .animate-dev-services-text {
+    animation-duration: 3s !important;
+    animation-timing-function: var(--ease-smooth) !important;
+  }
+
+  .animate-letter-float {
+    animation-duration: 1s !important;
+    animation-timing-function: var(--ease-120hz) !important;
+  }
+
+  .animate-warm-glow-pulse {
+    animation-duration: 1.5s !important;
+    animation-timing-function: var(--ease-smooth) !important;
+  }
+
+  .animate-sparkle-enhanced {
+    animation-duration: 1.2s !important;
+    animation-timing-function: var(--ease-120hz) !important;
+  }
+}
+
+/* GPU acceleration utilities */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.gpu-layer {
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  contain: layout style paint;
+}
+
+/* Smooth scroll optimizations */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  will-change: scroll-position;
+  contain: layout;
+}
+
+/* High-performance button animations */
+.button-120hz {
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
+  transition:
+    transform var(--duration-fast) var(--ease-bounce),
+    box-shadow var(--duration-fast) var(--ease-120hz);
+}
+
+.button-120hz:hover {
+  transform: translateY(-1px) scale(1.02) translateZ(0);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.button-120hz:active {
+  transform: translateY(0) scale(0.98) translateZ(0);
+  transition-duration: var(--duration-ultra-fast);
+}
+
+/* Enhanced notification animations */
+.notification-120hz {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  animation-timing-function: var(--ease-elastic);
+  contain: layout style paint;
+}
+
+/* Performance monitoring helpers */
+.debug-performance {
+  outline: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.debug-performance::after {
+  content: "GPU Layer";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  font-size: 10px;
+  padding: 2px 4px;
+  pointer-events: none;
+}
+
+/* Ultra-high performance mode */
+.ultra-performance {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  contain: strict;
+  isolation: isolate;
+  pointer-events: auto;
+}
+
+/* Optimized for 144hz+ displays */
+@media (min-refresh-rate: 144hz) {
+  :root {
+    --duration-ultra-fast: 0.06s;
+    --duration-fast: 0.12s;
+    --duration-medium: 0.25s;
+  }
+
+  .animate-dev-services-text {
+    animation-duration: 2.5s !important;
+  }
+
+  .animate-letter-float {
+    animation-duration: 0.8s !important;
+  }
+}
+
+/* Force hardware acceleration for critical elements */
+.critical-performance {
+  will-change: transform, opacity, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
+  isolation: isolate;
+  /* Force GPU layer creation */
+  opacity: 0.9999;
+}
+
+/* Smooth micro-interactions */
+.micro-smooth {
+  transition: all var(--duration-fast) var(--ease-120hz);
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.micro-smooth:hover {
+  transform: scale(1.01) translateZ(0);
+}
+
+/* Performance-first card animations */
+.card-performance {
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
+  transition:
+    transform var(--duration-medium) var(--ease-smooth),
+    box-shadow var(--duration-medium) var(--ease-120hz);
+}
+
+.card-performance:hover {
+  transform: translateY(-2px) scale(1.01) translateZ(0);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
