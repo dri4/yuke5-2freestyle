@@ -9676,7 +9676,7 @@ const PricingSection = React.forwardRef<HTMLDivElement, SectionProps>(
           "Mobile responsive",
           "SEO optimized",
           "Fast loading times",
-          "Contact forms",
+          "Frontend & Backend",
         ],
         popular: true,
       },
