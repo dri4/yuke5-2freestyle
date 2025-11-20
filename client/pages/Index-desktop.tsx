@@ -55,7 +55,7 @@ const sections = [
   { id: "about", title: "About Us", component: "about" },
   { id: "what-we-do", title: "Our Process", component: "what-we-do" },
   { id: "services", title: "Services", component: "services" },
-  { id: "portfolio", title: "Portfolio", component: "portfolio" },
+  { id: "portfolio", title: "Showcase", component: "portfolio" },
   { id: "pricing", title: "Pricing", component: "pricing" },
   { id: "contact", title: "Contact Us", component: "contact" },
 ];
@@ -5699,7 +5699,7 @@ function MobileHamburgerMenu({
     { text: "What we do?" },
     { text: "Pricing" },
     { text: "Services" },
-    { text: "Portfolio" },
+    { text: "Showcase" },
     { text: "Contact us" },
   ];
 
@@ -5999,7 +5999,7 @@ const ORB_BUTTON_CONFIG = {
       customRadiusMultiplier: null,
     },
     {
-      text: "Portfolio",
+      text: "Showcase",
       targetId: "portfolio",
       angle: 150,
       radius: 280,
@@ -6112,7 +6112,7 @@ function OrbFloatingButtons({ animationStep }: { animationStep: number }) {
             else if (button.text === "What we do?") scrollToSection(2);
             else if (button.text === "Pricing") scrollToSection(5);
             else if (button.text === "Services") scrollToSection(3);
-            else if (button.text === "Portfolio") scrollToSection(4);
+            else if (button.text === "Showcase") scrollToSection(4);
             else if (button.text === "Contact us") scrollToSection(6);
             else button.onClick?.();
           }}
@@ -11457,7 +11457,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 className={`font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight relative mobile-lively-text ${theme === "light" ? "text-gray-900" : "text-white"}`}
               >
                 <span className="warm-glow-text animate-warm-glow-pulse">
-                  Portfolio
+                  Showcase
                 </span>
 
                 {/* Optimized sparkles for better performance */}

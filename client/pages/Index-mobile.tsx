@@ -307,7 +307,7 @@ export default function Index() {
     { id: "about", label: "About Us", icon: Info },
     { id: "process", label: "Our Process", icon: Settings },
     { id: "services", label: "Services", icon: Settings },
-    { id: "portfolio", label: "Portfolio", icon: Briefcase },
+    { id: "portfolio", label: "Showcase", icon: Briefcase },
     { id: "pricing", label: "Pricing", icon: DollarSign },
     { id: "contact", label: "Contact", icon: Phone },
   ];
@@ -974,7 +974,7 @@ export default function Index() {
               >
                 <span className="relative z-10 text-lg">
                   <span className="view-portfolio-text font-semibold">
-                    View Portfolio
+                    View Showcase
                   </span>
                 </span>
 
@@ -1009,7 +1009,7 @@ export default function Index() {
                   <ChevronDown className="w-5 h-5 text-blue-400 animate-bounce-slow" />
                   <div className="text-center">
                     <div className="text-sm font-semibold text-white/90 tracking-wide">Scroll down</div>
-                    <div className="text-xs text-muted-foreground">Discover our services & portfolio</div>
+                    <div className="text-xs text-muted-foreground">Discover our services & showcase</div>
                   </div>
                 </div>
               </motion.div>
@@ -1314,7 +1314,7 @@ export default function Index() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              Portfolio
+              Showcase
             </motion.h2>
 
             <div className="space-y-6 mb-6">
