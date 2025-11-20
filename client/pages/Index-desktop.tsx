@@ -3815,11 +3815,11 @@ export default function Index() {
                           : {}
                       }
                     >
-                      <span className="inline-block relative warm-glow-text animate-warm-glow-pulse animate-wavy-text">
+                      <span className="inline-block relative warm-glow-text animate-wavy-text">
                         K
                       </span>
                       <span
-                        className="inline-block relative warm-glow-text animate-warm-glow-pulse animate-wavy-text"
+                        className="inline-block relative warm-glow-text animate-wavy-text"
                         style={{
                           animationDelay: "0.3s",
                         }}
@@ -3827,7 +3827,7 @@ export default function Index() {
                         o
                       </span>
                       <span
-                        className="inline-block relative warm-glow-text animate-warm-glow-pulse animate-wavy-text"
+                        className="inline-block relative warm-glow-text animate-wavy-text"
                         style={{
                           animationDelay: "0.6s",
                         }}
