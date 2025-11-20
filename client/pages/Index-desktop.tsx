@@ -3953,7 +3953,7 @@ export default function Index() {
                               <span
                                 key={i}
                                 aria-hidden="true"
-                                className="inline-block relative warm-glow-text animate-warm-glow-pulse animate-wavy-text"
+                                className="inline-block relative warm-glow-text animate-wavy-text"
                                 style={{
                                   animationDelay: `${i * 0.06}s`,
                                 }}
