@@ -9,7 +9,7 @@ config();
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, "server/node-build.ts"),
+      entry: "server/node-build.ts",
       name: "server",
       fileName: "production",
       formats: ["es"],
