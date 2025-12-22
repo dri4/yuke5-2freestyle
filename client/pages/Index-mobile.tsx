@@ -471,7 +471,7 @@ export default function Index() {
       description: "Full-featured e-commerce platform with modern design",
       tech: ["React", "Node.js", "Stripe"],
       gradient: "from-blue-500/10 to-purple-500/10",
-      image: "/ecommerce website.png",
+      image: "/ecommerce-website.png",
       isImage: true,
     },
     {
@@ -479,7 +479,7 @@ export default function Index() {
       description: "Comprehensive admin dashboard for data management",
       tech: ["React", "Analytics", "Real-time"],
       gradient: "from-green-500/10 to-blue-500/10",
-      image: "/dashboard panel.png",
+      image: "/dashboard-panel.png",
       isImage: true,
     },
     {
@@ -487,7 +487,7 @@ export default function Index() {
       description: "Professional SaaS landing page with conversion focus",
       tech: ["React", "Next.js", "TailwindCSS"],
       gradient: "from-yellow-500/10 to-orange-500/10",
-      image: "/SAAS website.png",
+      image: "/SAAS-website.png",
       isImage: true,
     },
   ];

@@ -10347,7 +10347,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
         description: "Full-featured e-commerce platform with modern design",
         tech: ["React", "Node.js", "Stripe"],
         image: "from-purple-500 to-pink-500",
-        imageSrc: "/ecommerce website.png",
+        imageSrc: "/ecommerce-website.png",
         isImage: true,
       },
       {
@@ -10355,7 +10355,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
         description: "Comprehensive admin dashboard for data management",
         tech: ["React", "Analytics", "Real-time"],
         image: "from-blue-500 to-cyan-500",
-        imageSrc: "/dashboard panel.png",
+        imageSrc: "/dashboard-panel.png",
         isImage: true,
       },
       {
@@ -10363,7 +10363,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
         description: "Professional SaaS landing page with conversion focus",
         tech: ["React", "Next.js", "TailwindCSS"],
         image: "from-green-500 to-emerald-500",
-        imageSrc: "/SAAS website.png",
+        imageSrc: "/SAAS-website.png",
         isImage: true,
       },
     ];
