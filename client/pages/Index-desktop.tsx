@@ -63,6 +63,50 @@ const sections = [
 const getSectionIndex = (idOrTitle: string) =>
   sections.findIndex((s) => s.id === idOrTitle || s.title === idOrTitle);
 
+// ProjectImage component for handling image loading with fallback
+const ProjectImage: React.FC<{
+  imageSrc: string;
+  title: string;
+  gradientClass: string;
+}> = ({ imageSrc, title, gradientClass }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  return (
+    <>
+      {!imageError && (
+        <img
+          src={imageSrc}
+          alt={title}
+          className="w-full h-full object-cover"
+          onLoad={() => setImageLoaded(true)}
+          onError={() => setImageError(true)}
+          style={{ opacity: imageLoaded ? 1 : 0, transition: "opacity 0.3s" }}
+        />
+      )}
+      {(imageError || !imageLoaded) && (
+        <>
+          {/* Dark mesh background similar to provided image */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: "20px 20px",
+            }}
+          />
+          {/* Gradient overlay */}
+          <div
+            className={`absolute inset-0 bg-gradient-to-br ${gradientClass} opacity-60`}
+          />
+        </>
+      )}
+      {imageLoaded && !imageError && (
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+      )}
+    </>
+  );
+};
+
 export default function Index() {
   const { theme, setTheme } = useTheme();
   const { mode, toggleMode } = useRetroMode();
@@ -11695,15 +11739,12 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           }}
                         >
                           {project.isImage ? (
-                            // Real image display
-                            <>
-                              <img
-                                src={project.imageSrc}
-                                alt={project.title}
-                                className="w-full h-full object-cover"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                            </>
+                            // Real image display with state management
+                            <ProjectImage
+                              imageSrc={project.imageSrc}
+                              title={project.title}
+                              gradientClass={project.image}
+                            />
                           ) : (
                             // Gradient fallback
                             <>

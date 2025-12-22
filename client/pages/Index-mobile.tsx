@@ -49,6 +49,37 @@ import {
 import { cn } from "@/lib/utils";
 import { useMobilePerformance } from "@/hooks/use-mobile-performance";
 
+// ProjectImage component for handling image loading with fallback
+const ProjectImage: React.FC<{
+  imageSrc: string;
+  title: string;
+  gradientClass: string;
+}> = ({ imageSrc, title, gradientClass }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  return (
+    <>
+      {!imageError && (
+        <img
+          src={imageSrc}
+          alt={title}
+          className="w-full h-48 object-cover rounded-t-xl"
+          loading="lazy"
+          onLoad={() => setImageLoaded(true)}
+          onError={() => setImageError(true)}
+          style={{ opacity: imageLoaded ? 1 : 0, transition: "opacity 0.3s" }}
+        />
+      )}
+      {(imageError || !imageLoaded) && (
+        <div
+          className={`w-full h-48 rounded-t-xl bg-gradient-to-br ${gradientClass}`}
+        />
+      )}
+    </>
+  );
+};
+
 export default function Index() {
   const { showInfo } = useUnifiedNotifications();
   const { isMobileSafari, isIOS } = useBrowserDetection();
@@ -1343,11 +1374,10 @@ export default function Index() {
 
                   {/* Project Image */}
                   <div className="relative">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover rounded-t-xl"
-                      loading="lazy"
+                    <ProjectImage
+                      imageSrc={project.image}
+                      title={project.title}
+                      gradientClass={project.gradient}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-t-xl" />
                   </div>
