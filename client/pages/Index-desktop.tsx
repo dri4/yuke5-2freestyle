@@ -2625,14 +2625,15 @@ export default function Index() {
                 }}
               >
                 {/* Gradient overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 pointer-events-none rounded-3xl" />
+
                 {/* Close Button */}
                 <button
                   onClick={() => {
                     setIsHelpModalOpen(false);
                     setHasInteractedWithHelp(true);
                   }}
-                  className={`absolute top-4 right-4 p-2 rounded-full transition-all duration-200 z-10 ${
+                  className={`absolute top-4 right-4 p-2 rounded-full transition-all duration-200 z-50 cursor-pointer ${
                     theme === "light"
                       ? "text-gray-500 hover:text-gray-700 hover:bg-white/30"
                       : "text-gray-400 hover:text-white hover:bg-white/15"
