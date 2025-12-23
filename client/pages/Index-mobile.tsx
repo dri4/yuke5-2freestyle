@@ -308,6 +308,16 @@ export default function Index() {
     };
   }, []);
 
+  // Auto-close success modal after 5 seconds
+  useEffect(() => {
+    if (showResultModal.open && showResultModal.success) {
+      const timer = setTimeout(() => {
+        setShowResultModal({ open: false, success: false, message: null });
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showResultModal.open, showResultModal.success]);
+
   // Enhanced mobile animations
   const premiumVariants = {
     hidden: { opacity: 0, y: 30, scale: 0.95 },
@@ -2063,22 +2073,26 @@ export default function Index() {
               </p>
 
               {showResultModal.open && createPortal(
-                <div className="fixed inset-0 z-[20000] flex items-center justify-center px-4">
+                <div className="fixed inset-0 z-[99999] flex items-center justify-center px-4">
                   {/* Backdrop */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute inset-0 bg-black/40 backdrop-blur-md"
+                    className="absolute inset-0 bg-black/60 backdrop-blur-md"
                     onClick={() => setShowResultModal({ open: false, success: false, message: null })}
                   />
 
                   {/* Modal Content */}
                   <motion.div
-                    className="relative w-full max-w-md rounded-xl bg-card/80 backdrop-blur-lg border border-border p-6 shadow-2xl"
-                    initial={{ scale: 0.5, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
+                    className={`relative w-full max-w-md rounded-2xl backdrop-blur-xl border p-8 shadow-2xl ${
+                      showResultModal.success
+                        ? "bg-emerald-500/5 border-emerald-400/30"
+                        : "bg-red-500/5 border-red-400/30"
+                    }`}
+                    initial={{ scale: 0.5, opacity: 0, y: 50 }}
+                    animate={{ scale: 1, opacity: 1, y: 0 }}
                     transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
                   >
                     {/* Success/Error Icon */}
