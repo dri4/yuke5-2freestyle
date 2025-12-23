@@ -4313,7 +4313,7 @@ export default function Index() {
                   <motion.button
                     key={section.id}
                     onClick={() => scrollToSection(index)}
-                    className={`px-2 md:px-2.5 lg:px-3 py-1 md:py-1.5 rounded-full text-xs font-medium transition-all duration-300 relative overflow-hidden animate-textGlow ${
+                    className={`px-2 md:px-2.5 lg:px-3 py-1 md:py-1.5 rounded-full text-xs font-medium transition-all duration-300 relative overflow-hidden ${
                       currentSection === index
                         ? "text-white"
                         : theme === "light"
